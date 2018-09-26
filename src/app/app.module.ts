@@ -1,10 +1,10 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
-import {ProductListComponent} from "./products/product-list.component";
 import {RouterModule} from "@angular/router";
 import {WelcomeComponent} from "./home/welcome.component";
-import {ProductsModule} from "./products/products.module";
+import {ProductModule} from "./products/product.module";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
     declarations: [
@@ -13,10 +13,10 @@ import {ProductsModule} from "./products/products.module";
     ],
     imports: [
         BrowserModule,
-        ProductsModule,
+        HttpClientModule,
+        ProductModule,
         RouterModule.forRoot([
             {path: 'welcome', component: WelcomeComponent},
-            {path: 'products', component: ProductListComponent, children: []},
             {path: '', redirectTo: 'welcome', pathMatch: 'full'},
             {path: '**', redirectTo: 'welcome', pathMatch: 'full'}
         ])
