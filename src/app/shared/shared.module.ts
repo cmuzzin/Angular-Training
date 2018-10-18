@@ -6,7 +6,8 @@ import {FormsModule} from "@angular/forms";
 
 @NgModule({
     imports: [
-        CommonModule
+        CommonModule,
+        FormsModule
     ],
     declarations: [StarComponent, ConvertToSpacesPipe],
     exports: [StarComponent, ConvertToSpacesPipe, CommonModule, FormsModule],
